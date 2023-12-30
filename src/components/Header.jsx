@@ -60,7 +60,6 @@ const HeaderBar = styled.header`
   }
 `;
 const LogoImg = styled.img`
-  /* width: 250px; */
   height: 7.5rem;
 `;
 const MenuList = styled.ul`
@@ -69,13 +68,14 @@ const MenuList = styled.ul`
   align-items: center;
 `;
 const MenuItems = styled.li`
-  margin: 0 20px;
+  margin: 0 2.5rem;
 
   a {
     color: #000;
     text-decoration: none;
     font-family: "Poppins", sans-serif;
     font-size: 1.8rem;
+    font-weight: 500;
     text-transform: uppercase;
     position: relative;
 
