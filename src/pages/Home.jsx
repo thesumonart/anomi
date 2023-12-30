@@ -1,62 +1,92 @@
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+import { FaArrowRight } from "react-icons/fa6";
+
 const Home = () => {
   return (
-    <div>
-      Home Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque
-      beatae rerum esse asperiores rem laborum fugiat voluptate iusto facere
-      incidunt, iure nihil eveniet ipsam doloremque dolor possimus eum enim?
-      Praesentium at, sequi maxime libero dolore vero placeat incidunt quo
-      quasi, doloremque voluptatum temporibus. Explicabo, porro. Tempora
-      veritatis consequuntur mollitia quidem, quos tenetur sint assumenda iste
-      molestiae iusto facilis, voluptatum ab quam incidunt quasi labore
-      distinctio iure magni. Laborum necessitatibus iste voluptatum repellat
-      autem officiis consequatur rem repudiandae quidem nulla ratione quo
-      officia, neque pariatur fugit. Ratione possimus aliquid neque? Cum
-      mollitia maxime porro provident nemo, iure, nisi iste modi, facere a
-      accusantium. Atque quaerat nostrum earum. Quas perferendis error fugit
-      expedita vitae molestiae quia numquam. Sed consectetur nulla ratione
-      cupiditate quas labore in, aut, eum minus voluptatum sit fugit numquam,
-      fuga veniam ea blanditiis ducimus amet aliquam quae quis nemo quibusdam
-      aspernatur? Dicta sint, odit rem fuga minima at blanditiis ex officia
-      explicabo, optio quisquam rerum. Tenetur numquam distinctio, aspernatur
-      unde magnam facilis porro omnis iure! Praesentium vero sequi eveniet
-      perferendis nemo dolor molestiae aspernatur explicabo hic quibusdam quae
-      corrupti accusantium, commodi impedit tempora voluptatibus dolorem.
-      Recusandae, maxime quae! Officiis officia enim, ipsam quis ullam placeat
-      illum commodi error sapiente facilis repellendus aliquam voluptate facere,
-      iure sed praesentium asperiores assumenda, ad cupiditate? Sunt vero
-      aspernatur necessitatibus quia consequuntur et totam, debitis quod, enim
-      omnis blanditiis quis eligendi eveniet, inventore unde animi ex commodi
-      fuga? Quia, dolore quis ea neque molestias id aperiam quasi expedita
-      ullam, ab exercitationem molestiae odio perspiciatis? Quo blanditiis
-      aliquid autem, deleniti asperiores nihil, dignissimos ab nemo totam
-      repudiandae magni harum maxime consectetur, eligendi ea aperiam est iste
-      debitis eveniet ullam aut alias similique praesentium? Rem magnam iusto
-      obcaecati repellendus. Asperiores pariatur neque quo eum repudiandae
-      alias, minima ad reprehenderit repellendus placeat nihil dolor veniam cum
-      similique molestiae? Asperiores sequi modi consequatur ex neque inventore
-      soluta voluptate sunt ipsam, omnis harum voluptatem provident deserunt
-      incidunt iusto impedit numquam autem ad, fuga quaerat. Eius enim facilis
-      quaerat perspiciatis molestiae adipisci veniam ex officiis ut fugit?
-      Accusamus perferendis quisquam vel dolorem sint recusandae a, enim alias
-      eveniet adipisci itaque iusto eius harum id delectus, tempora error quos
-      modi iure porro, repellendus suscipit consectetur deserunt nostrum.
-      Commodi iste dolor error sed, enim esse in dicta! Harum fugiat minus modi,
-      voluptate laudantium quaerat placeat porro mollitia tenetur a vero autem
-      atque provident unde quae aut excepturi? Explicabo quae earum sit alias
-      voluptatum. Pariatur delectus deserunt cumque, praesentium sint ea maxime
-      natus corrupti similique totam. Nesciunt dignissimos doloribus eos
-      exercitationem animi labore temporibus consequatur repellat error,
-      consequuntur sapiente sit dolorem quaerat itaque quisquam amet. Nam
-      quaerat accusamus impedit? Maxime quaerat vitae voluptatibus ratione
-      animi, nisi dolores excepturi, explicabo laudantium dolorem hic architecto
-      praesentium tempora, labore numquam. A dolores molestias sed dolorem autem
-      at tenetur, consequuntur adipisci itaque expedita facilis molestiae
-      laborum deleniti voluptates modi maxime delectus ex aspernatur animi
-      numquam officiis earum. Explicabo quidem quae saepe ducimus magnam hic
-      facere. Sapiente illo aliquam, quis omnis accusamus ullam voluptates
-      necessitatibus ratione earum saepe.
-    </div>
+    <Wrapper>
+      <div className="container hero_section">
+        <TextBox>
+          <h1>RENIX CREATIVE</h1>
+          <div>
+            <span className="agency">AGENCY</span>
+
+            <div className="inner_text">
+              <p>
+                Sed consequatur repellat et harum saepe et odio nemo qui minima
+                nemo est aspernatur quibusdam sit officiis blanditiis eaque
+                voluptatem ea quia quaerat quatur.
+              </p>
+              <Link to="about">
+                <span>Discover More</span>
+                <FaArrowRight />
+              </Link>
+            </div>
+          </div>
+        </TextBox>
+        <Illustration>
+          <img src="/images/home1-pattern1.jpg" alt="illustration" />
+        </Illustration>
+      </div>
+    </Wrapper>
   );
 };
+
+const Wrapper = styled.main`
+  padding: 20rem 0;
+  display: grid;
+  place-items: center;
+  .hero_section {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+  }
+`;
+const TextBox = styled.section`
+  flex-basis: 70%;
+  h1 {
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 13.5rem;
+    font-family: "Big Shoulders Text", sans-serif;
+  }
+  div {
+    display: flex;
+    margin-top: 2rem;
+    span.agency {
+      font-size: 14rem;
+      font-weight: 400;
+      line-height: 13.5rem;
+      font-family: "Big Shoulders Text", sans-serif;
+    }
+    .inner_text {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      align-items: start;
+      margin-left: 2rem;
+      p {
+        color: rgb(85, 85, 85);
+        font-size: 1.7rem;
+        font-weight: 400;
+        font-family: "Poppins", sans-serif;
+        line-height: 2.96rem;
+      }
+      a {
+        font-size: 1.7rem;
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        color: #000;
+
+        font-weight: 500;
+        svg {
+          margin-left: 0.5rem;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+`;
+const Illustration = styled.section``;
 
 export default Home;
