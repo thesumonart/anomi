@@ -39,7 +39,7 @@ const Hero = styled.section`
 
   justify-content: space-between;
   align-items: center;
-  height: 80vh;
+  height: 85vh;
   @media (max-width: 768px) {
     flex-direction: column;
   }
