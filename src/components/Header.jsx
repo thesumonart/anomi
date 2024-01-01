@@ -35,6 +35,7 @@ const Header = () => {
   );
 };
 const HeaderBar = styled.header`
+  z-index: 1;
   background: #f7f7f7;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
     rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
@@ -78,7 +79,7 @@ const MenuItems = styled.li`
     font-weight: 500;
     text-transform: uppercase;
     position: relative;
-
+    transform: translate3d(0px, 0px);
     &::before {
       content: "";
       position: absolute;
@@ -94,6 +95,9 @@ const MenuItems = styled.li`
     &:hover::before {
       width: 0.7rem;
       height: 0.7rem;
+    }
+    &:hover {
+      transform: translate3d(-2.8117px, 12.5px);
     }
   }
 `;
