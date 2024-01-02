@@ -70,7 +70,7 @@ const Header = () => {
             <span id="menuToggleBar">
               <Hamburger
                 size={32}
-                color="#4169e1"
+                color="#dc143c"
                 onToggle={(toggled) => {
                   if (toggled) {
                     setMenuOpen(true);
@@ -99,6 +99,7 @@ const HeaderBar = styled.header`
   }
   .container nav {
     display: flex;
+    height: 100%;
     align-items: center;
     justify-content: space-between;
     button {
@@ -149,7 +150,7 @@ const MenuItems = styled.li`
       bottom: 50%;
       transform: translateY(50%);
       left: -1.2rem;
-      background-color: #4169e1;
+      background-color: #dc143c;
       height: 0rem;
       border-radius: 50%;
       width: 0rem;

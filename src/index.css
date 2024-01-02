@@ -9,11 +9,17 @@
   padding: 0;
   /* outline: 1px solid black; */
 }
+
 *,
 *::after,
 *::before {
   box-sizing: border-box;
 }
+:root {
+  --primary-color: #4169e1;
+  --secondary-color: #dc143c;
+}
+
 html {
   font-size: 62.5%;
   /* 1rem = 10px */
@@ -41,7 +47,7 @@ h4.heading {
   position: absolute;
   top: 110%;
   left: 0;
-  background-color: #4169e1;
+  background-color: var(--secondary-color);
   height: 1.5rem;
   width: 1.5rem;
   border-radius: 50%;
@@ -52,7 +58,7 @@ h4.heading {
   position: absolute;
   top: 120%;
   left: 1rem;
-  background-color: #4169e1;
+  background-color: var(--secondary-color);
   height: 0.3rem;
   width: 70%;
   border-radius: 1rem;
@@ -62,7 +68,7 @@ h4.heading {
   transition: all 0.25s ease-out;
 }
 .link:hover {
-  color: #4169e1 !important;
+  color: var(--primary-color) !important;
 }
 
 /* =========menu================ */
@@ -74,7 +80,7 @@ h4.heading {
   position: absolute;
   bottom: -0.2rem !important;
   left: 0 !important;
-  background-color: #4169e1;
+  background-color: var(--secondary-color);
   height: 0.3rem !important;
   border-radius: 1rem !important;
   width: 100% !important;
@@ -94,7 +100,7 @@ h4.heading {
   flex-direction: column;
   justify-content: center;
   gap: 5rem;
-  background-color: #004953;
+  background-color: #4169e1;
   position: absolute;
   transition: all 0.25s ease-out;
   top: 7.5rem;
