@@ -7,6 +7,7 @@
 * {
   margin: 0;
   padding: 0;
+  /* outline: 1px solid black; */
 }
 *,
 *::after,
@@ -16,6 +17,9 @@
 html {
   font-size: 62.5%;
   /* 1rem = 10px */
+}
+html::-webkit-scrollbar {
+  display: none;
 }
 
 /* ==============Reusable css===================== */
@@ -54,6 +58,13 @@ h4.heading {
   border-radius: 1rem;
 }
 
+.link {
+  transition: all 0.25s ease-out;
+}
+.link:hover {
+  color: #4169e1 !important;
+}
+
 /* =========menu================ */
 .active {
   position: relative;
@@ -69,9 +80,26 @@ h4.heading {
   width: 100% !important;
 }
 
-.link {
-  transition: all 0.25s ease-out;
+#menuToggleBar {
+  display: none;
 }
-.link:hover {
-  color: #4169e1 !important;
+@media (max-width: 768px) {
+  #menuToggleBar {
+    display: block;
+    transform: translateX(-50%);
+  }
+}
+
+.mobile_menu_list {
+  flex-direction: column;
+  justify-content: center;
+  gap: 5rem;
+  background-color: #004953;
+  position: absolute;
+  transition: all 0.25s ease-out;
+  top: 7.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  height: calc(100vh - 7.5rem);
+  width: 100vw;
 }

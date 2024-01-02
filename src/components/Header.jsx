@@ -1,34 +1,86 @@
 import styled from "styled-components";
 import { NavLink, Link } from "react-router-dom";
-import { CiBoxList } from "react-icons/ci";
+import { Divide as Hamburger } from "hamburger-react";
+import { useState } from "react";
 const Header = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
     <HeaderBar>
       <div className="container">
         <nav className="NavBar">
           <Link to={"/"}>
-            <LogoImg src="/temp_logo.svg"></LogoImg>
+            <LogoImg src="/images/anomilogo.svg"></LogoImg>
           </Link>
-          <MenuList>
+          <MenuList
+            className={menuOpen ? "mobile_menu_list" : "nonMobile_menu_list"}
+            menuOpen={menuOpen}
+          >
             <MenuItems>
-              <NavLink to={"/"}>Home</NavLink>
+              <NavLink
+                onClick={() => {
+                  setMenuOpen(false);
+                }}
+                to={"/"}
+              >
+                Home
+              </NavLink>
             </MenuItems>
             <MenuItems>
-              <NavLink to={"/about"}>About</NavLink>
+              <NavLink
+                onClick={() => {
+                  setMenuOpen(false);
+                }}
+                to={"/about"}
+              >
+                About
+              </NavLink>
             </MenuItems>
             <MenuItems>
-              <NavLink to={"/protfolio"}>portfolio</NavLink>
+              <NavLink
+                onClick={() => {
+                  setMenuOpen(false);
+                }}
+                to={"/protfolio"}
+              >
+                portfolio
+              </NavLink>
             </MenuItems>
             <MenuItems>
-              <NavLink to={"/blog"}>blog</NavLink>
+              <NavLink
+                onClick={() => {
+                  setMenuOpen(false);
+                }}
+                to={"/blog"}
+              >
+                blog
+              </NavLink>
             </MenuItems>
             <MenuItems>
-              <NavLink to={"/contact"}>contact</NavLink>
+              <NavLink
+                onClick={() => {
+                  setMenuOpen(false);
+                }}
+                to={"/contact"}
+              >
+                contact
+              </NavLink>
             </MenuItems>
           </MenuList>
-          <button>
-            <CiBoxList />
-          </button>
+          {
+            <span id="menuToggleBar">
+              <Hamburger
+                size={32}
+                color="#4169e1"
+                onToggle={(toggled) => {
+                  if (toggled) {
+                    setMenuOpen(true);
+                  } else {
+                    setMenuOpen(false);
+                  }
+                }}
+              />
+            </span>
+          }
         </nav>
       </div>
     </HeaderBar>
@@ -39,14 +91,16 @@ const HeaderBar = styled.header`
   background: #f7f7f7;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
     rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
-  height: 7.5rem;
+  height: 10rem;
   position: sticky;
   top: 0;
+  .container {
+    height: 100%;
+  }
   .container nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     button {
       cursor: pointer;
       border: 0;
@@ -61,25 +115,34 @@ const HeaderBar = styled.header`
   }
 `;
 const LogoImg = styled.img`
-  height: 7.5rem;
+  /* height: 7.5rem; */
+  width: 10rem;
 `;
 const MenuList = styled.ul`
   list-style: none;
   display: flex;
   align-items: center;
+  transition: all 300ms linear;
+  @media (max-width: 768px) {
+    li {
+      display: ${({ menuOpen }) => (menuOpen ? "block" : "none")};
+    }
+  }
 `;
 const MenuItems = styled.li`
   margin: 0 2.5rem;
 
   a {
     color: #000;
+    @media (max-width: 768px) {
+      color: #ffff;
+    }
     text-decoration: none;
     font-family: "Poppins", sans-serif;
     font-size: 1.8rem;
     font-weight: 500;
     text-transform: uppercase;
     position: relative;
-    transform: translate3d(0px, 0px);
     &::before {
       content: "";
       position: absolute;
@@ -95,9 +158,6 @@ const MenuItems = styled.li`
     &:hover::before {
       width: 0.7rem;
       height: 0.7rem;
-    }
-    &:hover {
-      transform: translate3d(-2.8117px, 12.5px);
     }
   }
 `;

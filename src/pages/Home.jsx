@@ -5,7 +5,7 @@ import Services from "../components/Services";
 const Home = () => {
   return (
     <Wrapper>
-      <div className="container ">
+      <div className="container" id="page-wrap">
         <HomeBanner />
         <Services />
       </div>
@@ -20,7 +20,7 @@ const Wrapper = styled.main`
   @media (max-width: 768px) {
     padding: 0 1rem;
     .container > section {
-      padding: 2rem 0;
+      padding: 10rem 0;
     }
   }
 `;

@@ -5,7 +5,9 @@ const HomeBanner = () => {
   return (
     <Hero>
       <TextBox>
-        <h1>ANOMI CREATIVE agency</h1>
+        <h1>
+          ANOMI nexus <span>creative agency</span>
+        </h1>
         <p className="innerText">
           Sed consequatur repellat et harum saepe et odio nemo qui minima nemo
           est aspernatur quibusdam sit officiis blanditiis eaque voluptatem ea
@@ -39,19 +41,25 @@ const Hero = styled.section`
 
   justify-content: space-between;
   align-items: center;
-  height: 80vh;
+  height: 85vh;
   @media (max-width: 768px) {
     flex-direction: column;
   }
 `;
 
 const TextBox = styled.section`
-  flex-basis: 50%;
+  flex-basis: 60%;
   h1 {
     font-size: 10rem;
     font-weight: 400;
     text-transform: uppercase;
     font-family: "Big Shoulders Text", sans-serif;
+    span {
+      display: block;
+    }
+    @media (max-width: 768px) {
+      font-size: 8rem;
+    }
   }
   p {
     font-size: 1.6rem;
@@ -63,12 +71,14 @@ const TextBox = styled.section`
     color: #000;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
-    display: flex;
-    align-items: center;
     transition: all 0.25s ease-out;
+    position: relative;
     svg {
-      margin-left: 0.5rem;
       rotate: -45deg;
+      position: absolute;
+      top: 50%;
+      right: -3rem;
+      transform: translateY(-50%);
       transition: all 0.25s ease-out;
     }
     &:hover {
@@ -84,15 +94,17 @@ const illustratoinWaveOne = keyframes`
     transform: translateY(0px);
   }
   25%{
-    transform: translateY(-4px);
+    transform: translate(-5px ,-4px);
+    
     
   }
   50%{
-    transform: translateY(-8px);
+    transform: translate(-10px ,-8px);
 
   }
   75%{
-    transform: translateY(-12px);
+    transform: translate(-10px ,12px);
+
     
   }
   100%{
@@ -101,20 +113,21 @@ const illustratoinWaveOne = keyframes`
   }
 
 `;
+
 const illustratoinWaveTwo = keyframes`
   0%{
     transform: translateY(0px);
   }
   25%{
-    transform: translateY(4px);
+    transform: translate(5px ,4px);
     
   }
   50%{
-    transform: translateY(8px);
+    transform: translate(10px ,8px);
 
   }
   75%{
-    transform: translateY(12px);
+    transform: translate(-10px ,12px);
     
   }
   100%{
@@ -128,6 +141,11 @@ const Illustration = styled.section`
   position: relative;
   width: 500px;
   height: 480px;
+
+  @media (max-width: 768px) {
+    height: 400px;
+    width: 384px;
+  }
   img {
     position: absolute;
     top: 0;
@@ -135,23 +153,17 @@ const Illustration = styled.section`
     height: 500px;
     width: 500px;
     transition: all 0.3s ease-in-out;
+    @media (max-width: 768px) {
+      height: 400px;
+      width: 400px;
+    }
   }
 
   #first_banner {
     animation: 3s ${illustratoinWaveOne} linear infinite;
   }
+  filter: drop-shadow(8px 8px 10px #c8c8c8);
   #second_banner {
     animation: 3s ${illustratoinWaveTwo} linear infinite;
   }
-
-  /* &:hover {
-    #first_banner {
-      transition: all 150ms linear;
-      transform: translateY(-10px);
-    }
-    #second_banner {
-      transition: all 150ms linear;
-      transform: translateY(10px);
-    }
-  } */
 `;
