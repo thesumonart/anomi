@@ -50,10 +50,10 @@ const Services = () => {
         </p>
       </TextBox>
       <ServicesInfo>
-        {serviceList.map((v) => {
+        {serviceList.map((v, i) => {
           return (
             <>
-              <div className="serviceBox">
+              <div key={i} className="serviceBox">
                 {v.icon}
                 <span className="serviceTitle">{v.serviceTitle}</span>
                 <span className="serviceDescription">
@@ -74,9 +74,7 @@ const Services = () => {
 
 export default Services;
 
-const ServicesSection = styled.section`
-  /* padding-top: 25rem !important; */
-`;
+const ServicesSection = styled.section``;
 const TextBox = styled.div`
   padding: 2rem 0;
   text-align: center;
