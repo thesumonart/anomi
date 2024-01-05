@@ -151,6 +151,7 @@ const MenuItems = styled.li`
       transform: translateY(50%);
       left: -1.2rem;
       background-color: #dc143c;
+
       height: 0rem;
       border-radius: 50%;
       width: 0rem;
