@@ -16,7 +16,7 @@ RGB Values: (220, 20, 60) */
 * {
   margin: 0;
   padding: 0;
-  /* outline: 1px solid black; */
+  /* outline: .1rem solid black; */
 }
 
 *,
@@ -31,7 +31,7 @@ RGB Values: (220, 20, 60) */
 
 html {
   font-size: 62.5%;
-  /* 1rem = 10px */
+  /* 1rem = 1.0rem */
 }
 html::-webkit-scrollbar {
   display: none;
@@ -40,7 +40,7 @@ html::-webkit-scrollbar {
 /* ==============Reusable css===================== */
 
 .container {
-  max-width: 1440px;
+  max-width: 144rem;
   margin: 0 auto;
 }
 button {
@@ -59,7 +59,7 @@ h4.heading {
   position: absolute;
   top: 110%;
   left: 0;
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   height: 1.5rem;
   width: 1.5rem;
   border-radius: 50%;
@@ -70,7 +70,7 @@ h4.heading {
   position: absolute;
   top: 120%;
   left: 1rem;
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   height: 0.3rem;
   width: 70%;
   border-radius: 1rem;
@@ -84,6 +84,54 @@ h4.heading {
 }
 
 /* =========menu================ */
+
+/* ===menu icon=== */
+#menu_checkbox {
+  display: none;
+}
+
+label#menuLabel {
+  display: block;
+  width: 3.2rem;
+  height: 3.2rem;
+  transition: 0.3s ease transform;
+  cursor: pointer;
+  transform: rotate(180deg);
+}
+
+label#menuLabel div {
+  height: 0.6rem;
+  background-color: var(--primary-color);
+  margin-bottom: 0.6rem;
+  border-radius: 0.4rem;
+  transition: 0.3s ease width, 0.3s ease margin-left, 0.3s ease margin-bottom,
+    0.3s ease background-color;
+}
+
+label#menuLabel div:first-child {
+  width: 3rem;
+}
+
+label#menuLabel div:nth-child(2) {
+  width: 1.5rem;
+}
+
+label#menuLabel div:last-child {
+  width: 2.2rem;
+}
+
+#menu_checkbox:checked + label#menuLabel {
+  transform: translateY(-50%) rotateZ(-90deg);
+}
+
+#menu_checkbox:checked + label#menuLabel div {
+  width: 0.6rem;
+  margin-bottom: 0.3rem;
+  background-color: var(--secondary-color);
+}
+
+/* ===menu icon end====== */
+
 .active {
   position: relative;
 }
@@ -101,7 +149,7 @@ h4.heading {
 #menuToggleBar {
   display: none;
 }
-@media (max-width: 768px) {
+@media (max-width: 76.8rem) {
   #menuToggleBar {
     display: block;
     transform: translateX(-50%);

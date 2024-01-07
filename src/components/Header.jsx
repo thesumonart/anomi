@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import { NavLink, Link } from "react-router-dom";
-import { Divide as Hamburger } from "hamburger-react";
 import { useState } from "react";
+import MenuBarIcon from "./MenuBarIcon";
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <HeaderBar>
       <div className="container">
@@ -68,17 +69,7 @@ const Header = () => {
           </MenuList>
           {
             <span id="menuToggleBar">
-              <Hamburger
-                size={32}
-                color="#dc143c"
-                onToggle={(toggled) => {
-                  if (toggled) {
-                    setMenuOpen(true);
-                  } else {
-                    setMenuOpen(false);
-                  }
-                }}
-              />
+              <MenuBarIcon setMenuOpen={setMenuOpen} />
             </span>
           }
         </nav>
@@ -102,22 +93,11 @@ const HeaderBar = styled.header`
     height: 100%;
     align-items: center;
     justify-content: space-between;
-    button {
-      cursor: pointer;
-      border: 0;
-      outline: 0;
-      height: 2.2rem;
-      width: 2.2rem;
-      svg {
-        width: 100%;
-        height: 100%;
-      }
-    }
   }
 `;
 const LogoImg = styled.img`
-  /* height: 7.5rem; */
   width: 10rem;
+  margin-left: 1.5rem;
 `;
 const MenuList = styled.ul`
   list-style: none;

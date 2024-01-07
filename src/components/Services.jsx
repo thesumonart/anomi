@@ -44,10 +44,6 @@ const Services = () => {
           Manage your finance with
           <span>Anomi</span>
         </p>
-        <p className="innerText">
-          Services ranging from widely available homecare nurses and medical
-          devices are accessible throughout international markets.
-        </p>
       </TextBox>
       <ServicesInfo>
         {serviceList.map((v, i) => {
@@ -74,27 +70,39 @@ const Services = () => {
 
 export default Services;
 
-const ServicesSection = styled.section``;
+const ServicesSection = styled.section`
+  @media (max-width: 768px) {
+    padding-top: 20rem !important;
+  }
+`;
 const TextBox = styled.div`
   padding: 2rem 0;
   text-align: center;
   font-family: "Inter", sans-serif;
   width: 40%;
   margin: 0 auto;
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 5rem 0;
+  }
   p.subHeading {
     font-size: 4rem;
     font-weight: 500;
     text-transform: capitalize;
+
     span {
       display: block;
       text-transform: uppercase;
       color: #4169e1;
     }
-  }
-  p.innerText {
-    margin-top: 2rem;
-    line-height: 3rem;
-    font-size: 1.6rem;
+    @media (max-width: 768px) {
+      /* border: 1px solid; */
+      font-size: 3rem;
+      span {
+        display: inline-block;
+        margin-left: 1rem;
+      }
+    }
   }
 `;
 
@@ -109,6 +117,9 @@ const ServicesInfo = styled.div`
     height: 30rem;
     padding: 2rem;
     flex-basis: 30%;
+    @media (max-width: 768px) {
+      flex-basis: 100%;
+    }
     text-align: center;
     background-color: #f5f5f5;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
