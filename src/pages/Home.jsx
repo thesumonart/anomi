@@ -20,7 +20,7 @@ const Wrapper = styled.main`
   @media (max-width: 768px) {
     padding: 0 1rem;
     .container > section {
-      padding: 10rem 0;
+      padding: 1rem 0;
     }
   }
 `;

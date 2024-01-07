@@ -9,9 +9,13 @@ const HomeBanner = () => {
           ANOMI nexus <span>creative agency</span>
         </h1>
         <p className="innerText">
-          Sed consequatur repellat et harum saepe et odio nemo qui minima nemo
-          est aspernatur quibusdam sit officiis blanditiis eaque voluptatem ea
-          quia quaerat quatur.
+          Turning visions into pixels, creating seamless websites, and boosting
+          visibility—your digital success, our mission.{" "}
+          <span>
+            With a dedicated focus on innovation, we not only craft exceptional
+            online experiences but also strategically position your brand for
+            sustained growth in the digital realm.
+          </span>
         </p>
         <Link className="link" to="about">
           <span>Discover More</span>
@@ -48,23 +52,37 @@ const Hero = styled.section`
 `;
 
 const TextBox = styled.section`
-  flex-basis: 60%;
+  flex-basis: 50%;
   h1 {
     font-size: 10rem;
-    font-weight: 400;
+    font-weight: 800;
     text-transform: uppercase;
-    font-family: "Big Shoulders Text", sans-serif;
+    font-family: "Inter", sans-serif;
+    color: #4169e1;
     span {
       display: block;
+      font-size: 50%;
+      font-weight: 400;
+      color: #dc143c;
+      margin-left: -0.5rem;
     }
     @media (max-width: 768px) {
-      font-size: 8rem;
+      font-size: 5rem;
+      span {
+        margin-left: 0rem;
+      }
     }
   }
   p {
     font-size: 1.6rem;
     font-family: "Inter", sans-serif;
     margin: 2rem 0;
+    text-align: justify;
+    @media (max-width: 768px) {
+      span {
+        display: none;
+      }
+    }
   }
   a {
     font-size: 2rem;
@@ -139,12 +157,13 @@ const illustratoinWaveTwo = keyframes`
 
 const Illustration = styled.section`
   position: relative;
-  width: 500px;
-  height: 480px;
+  width: 50rem;
+  height: 48rem;
 
   @media (max-width: 768px) {
-    height: 400px;
-    width: 384px;
+    height: 35rem;
+    width: 35rem;
+    margin-top: 5rem;
   }
   img {
     position: absolute;
@@ -154,8 +173,8 @@ const Illustration = styled.section`
     width: 500px;
     transition: all 0.3s ease-in-out;
     @media (max-width: 768px) {
-      height: 400px;
-      width: 400px;
+      height: inherit;
+      width: inherit;
     }
   }
 
