@@ -48,11 +48,16 @@ const Hero = styled.section`
   height: 85vh;
   @media (max-width: 768px) {
     flex-direction: column;
+    align-items: start;
   }
 `;
 
-const TextBox = styled.section`
+const TextBox = styled.div`
   flex-basis: 50%;
+  @media (max-width: 768px) {
+    flex-basis: 0%;
+    width: 100%;
+  }
   h1 {
     font-size: 10rem;
     font-weight: 800;
@@ -78,7 +83,11 @@ const TextBox = styled.section`
     font-family: "Inter", sans-serif;
     margin: 2rem 0;
     text-align: justify;
+    word-spacing: 0.4rem;
+    letter-spacing: 0.1rem;
+    line-height: 2.7rem;
     @media (max-width: 768px) {
+      padding-right: 3rem;
       span {
         display: none;
       }
@@ -155,12 +164,13 @@ const illustratoinWaveTwo = keyframes`
 
 `;
 
-const Illustration = styled.section`
+const Illustration = styled.div`
   position: relative;
   width: 50rem;
   height: 48rem;
 
   @media (max-width: 768px) {
+    align-self: center;
     height: 35rem;
     width: 35rem;
     margin-top: 5rem;
@@ -169,8 +179,8 @@ const Illustration = styled.section`
     position: absolute;
     top: 0;
     left: 0;
-    height: 500px;
-    width: 500px;
+    height: 50rem;
+    width: 50rem;
     transition: all 0.3s ease-in-out;
     @media (max-width: 768px) {
       height: inherit;
