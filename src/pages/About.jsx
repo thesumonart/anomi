@@ -1,11 +1,23 @@
+import styled from "styled-components";
+
 const About = () => {
   return (
-    <div className="container">
-      <h1>I am from about</h1>
-      <h1>I am from ABOUT 4</h1>
-      <h1>I am from ABOUT 3</h1>
-    </div>
+    <Wrapper>
+      <div className="container"></div>
+    </Wrapper>
   );
 };
+
+const Wrapper = styled.main`
+  .container > section {
+    padding: 10rem 0;
+  }
+  @media (max-width: 768px) {
+    padding: 0 1rem;
+    .container > section {
+      padding: 1rem 0;
+    }
+  }
+`;
 
 export default About;

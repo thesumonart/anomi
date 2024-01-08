@@ -5,7 +5,7 @@ import Services from "../components/Services";
 const Home = () => {
   return (
     <Wrapper>
-      <div className="container" id="page-wrap">
+      <div className="container">
         <HomeBanner />
         <Services />
       </div>
