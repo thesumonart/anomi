@@ -1,9 +1,12 @@
 import styled from "styled-components";
+import AboutBanner from "../components/AboutBanner";
+import AboutSubDesOne from "../components/AboutSubDes";
 
 const About = () => {
   return (
     <Wrapper>
-      <div className="container"></div>
+      <AboutBanner />
+      <AboutSubDesOne />
     </Wrapper>
   );
 };

@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&family=Poppins:wght@200;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Text:wght@400;500;600&display=swap");
+
 /* font-family: 'Inter', sans-serif; */
 /* font-family: 'Poppins', sans-serif; */
 /* font-family: 'Big Shoulders Text', sans-serif; */
@@ -37,6 +38,9 @@ html::-webkit-scrollbar {
   display: none;
 }
 
+body {
+  background-color: #fff;
+}
 /* ==============Reusable css===================== */
 
 .container {
@@ -100,7 +104,7 @@ label#menuLabel {
 }
 
 label#menuLabel div {
-  height: 0.6rem;
+  height: 0.4rem;
   background-color: var(--primary-color);
   margin-bottom: 0.6rem;
   border-radius: 0.4rem;
@@ -126,6 +130,7 @@ label#menuLabel div:last-child {
 
 #menu_checkbox:checked + label#menuLabel div {
   width: 0.6rem;
+  height: 0.6rem;
   margin-bottom: 0.3rem;
   background-color: var(--secondary-color);
 }
