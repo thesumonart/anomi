@@ -1,18 +1,17 @@
 import styled from "styled-components";
-import AboutBanner from "../components/AboutBanner";
-import AboutSubDesOne from "../components/AboutSubDes";
+import PortfolioBanner from "../components/PortfolioBanner";
+import PortfolioGellery from "../components/PortfolioGellery";
 
-const About = () => {
+const Portfolio = () => {
   return (
     <Wrapper>
-      <AboutBanner />
-      <main className="container">
-        <AboutSubDesOne />
-      </main>
+      <PortfolioBanner />
+      <PortfolioGellery />
     </Wrapper>
   );
 };
 
+export default Portfolio;
 const Wrapper = styled.main`
   .container > section {
     padding: 10rem 0;
@@ -24,5 +23,3 @@ const Wrapper = styled.main`
     }
   }
 `;
-
-export default About;

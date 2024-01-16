@@ -41,7 +41,7 @@ const Header = () => {
                 onClick={() => {
                   setMenuOpen(false);
                 }}
-                to={"/protfolio"}
+                to={"/portfolio"}
               >
                 portfolio
               </NavLink>
@@ -51,9 +51,9 @@ const Header = () => {
                 onClick={() => {
                   setMenuOpen(false);
                 }}
-                to={"/blog"}
+                to={"/services"}
               >
-                blog
+                services
               </NavLink>
             </MenuItems>
             <MenuItems>

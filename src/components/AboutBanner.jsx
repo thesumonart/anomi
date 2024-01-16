@@ -1,3 +1,4 @@
+import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -7,9 +8,26 @@ const AboutBanner = () => {
       <AboutBg>
         <TextBox className="container">
           <h1>Elevating Creativity,Transforming Visions</h1>
-          <Link className="aboutBtn" to={"/contact"}>
-            Collaborate Now
-          </Link>
+
+          <p>
+            Welcome to Anomi Nexus, the nexus of creativity and technology where
+            we weave digital dreams into reality. At the core of our identity is
+            a dynamic team of experts dedicated to elevating your brand across
+            the digital landscape.
+          </p>
+
+          <Button
+            variant="contained"
+            size="large"
+            sx={{
+              fontSize: "1.6rem",
+              letterSpacing: "0.2rem",
+            }}
+          >
+            <Link className="aboutBtn" to={"/contact"}>
+              COLLABORATE NOW
+            </Link>
+          </Button>
         </TextBox>
         <img src="./images/downArrow.gif" alt="Go Down" />
       </AboutBg>
@@ -24,23 +42,22 @@ const AboutBg = styled.section`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 85vh;
+  height: 90vh;
   text-align: center;
   position: relative;
   img {
     position: absolute;
-    bottom: -2%;
+    bottom: 0;
     border-radius: 50%;
   }
 `;
 
 const TextBox = styled.div`
-  height: 80%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10rem;
   h1 {
     color: #fff;
     font-size: 7rem;
@@ -49,18 +66,17 @@ const TextBox = styled.div`
       display: block;
     }
   }
-  .aboutBtn {
-    display: inline-block;
-    width: 25rem;
-    text-align: center;
-    text-decoration: none;
-    background-color: #4169e1;
-    color: #fff;
+  p {
+    font-family: "Inter", sans-serif;
+    color: #c8c8c8;
+    padding: 5rem;
     font-size: 1.6rem;
+    line-height: 3rem;
+  }
+  .aboutBtn {
     font-family: "Poppins", sans-serif;
     text-transform: uppercase;
-    padding: 1rem 1.5rem;
-    border-radius: 0.5rem;
-    letter-spacing: 0.3rem;
+    text-decoration: none;
+    color: #fff;
   }
 `;
