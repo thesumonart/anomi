@@ -1,37 +1,11 @@
-import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Button, ImageList, ImageListItem } from "@mui/material";
-import axios from "axios";
+import { data as galleryArray } from "../config/data";
 const PortfolioGellery = () => {
-  const [galleryArray, setGalleryArray] = useState([]);
-
-  useEffect(() => {
-    const getGellaryData = async () => {
-      try {
-        const { data } = await axios.get(
-          "https://jsonplaceholder.typicode.com/photos?_limit=10"
-        );
-        return data;
-      } catch (error) {
-        console.log(`gellary add error ${error}`);
-      }
-    };
-    const result = getGellaryData();
-    console.log(result);
-  }, []);
-
   return (
     <div className="container">
       <Wrapper>
-        <ul
-          className="action_list"
-          onMouseMove={(e) => {
-            setHoverCursorValue({
-              x: e.clientX,
-              y: e.clientY,
-            });
-          }}
-        >
+        <ul className="action_list">
           <List>
             <Button className="gellery_action_btns">Show All</Button>
           </List>
@@ -46,12 +20,16 @@ const PortfolioGellery = () => {
           </List>
         </ul>
         {/* ================= gallery ======================*/}
-        <ImageList cols={4} variant="quilted">
+        <ImageList variant="quilted" cols={4}>
           {galleryArray &&
             galleryArray.map((item) => (
               <>
-                <ImageListItem key={item.id}>
-                  <img src={item.url} alt={item.title} loading="lazy" />
+                <ImageListItem
+                  key={item.img}
+                  cols={item.cols || 1}
+                  rows={item.rows || 1}
+                >
+                  <img src={item.img} alt={item.title} loading="lazy" />
                 </ImageListItem>
               </>
             ))}
@@ -66,7 +44,7 @@ export default PortfolioGellery;
 const Wrapper = styled.div`
   padding: 10rem 0;
   .action_list {
-    margin: 0 auto;
+    margin-bottom: 5rem;
     list-style: none;
     display: flex;
     justify-content: center;
@@ -89,16 +67,15 @@ const List = styled.li`
     &::before {
       content: "";
       position: absolute;
-      bottom: 0%;
-      left: 0%;
-      /* transform: translate(-50%, -50%); */
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       background-color: #4169e1;
-
       height: 0px;
       width: 0px;
-      border-radius: 50%;
-      transition: all 0.3s linear;
 
+      border-radius: 50%;
+      transition: all 0.4s linear;
       z-index: -2;
     }
     &:hover {
@@ -106,7 +83,7 @@ const List = styled.li`
       &::before {
         height: 200px;
         width: 200px;
-        scale: 3;
+        /* scale: 3; */
       }
     }
   }

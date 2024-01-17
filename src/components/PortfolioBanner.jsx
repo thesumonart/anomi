@@ -10,9 +10,6 @@ const PortfolioBanner = () => {
           loop="true"
           src="./videos/portfolio_bg_video.mp4"
         ></video>
-        <div className="container">
-          <h2 className="galleray_heading">GALLERY LIST</h2>
-        </div>
       </div>
     </BannerWrapper>
   );
@@ -29,10 +26,6 @@ const BannerWrapper = styled.div`
       width: inherit;
       height: inherit;
       object-fit: cover;
-      position: fixed;
-      left: 0;
-      top: 10rem;
-      bottom: 0;
       z-index: -1;
     }
     &::after {
@@ -49,15 +42,18 @@ const BannerWrapper = styled.div`
         rgba(0, 0, 0, 0.6) 100%
       );
     }
-  }
-  h2.galleray_heading {
-    position: absolute;
-    bottom: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 10rem;
-    font-family: "Inter", sans-serif;
-    color: #fff;
-    z-index: 1;
+    &::before {
+      content: "GALLERY LIST";
+      position: absolute;
+      left: 50%;
+      bottom: 10%;
+      transform: translateX(-50%);
+      z-index: 1;
+      font-family: "Inter", sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.5rem;
+      color: #ffffff;
+      font-size: 10rem;
+    }
   }
 `;
